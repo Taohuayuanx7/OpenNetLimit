@@ -1,0 +1,51 @@
+﻿<Window x:Class="NetMeter.LimitDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title=""
+        SizeToContent="Height"
+        Width="420"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Background="#F5F6F8">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" x:Name="ProcessText" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,4"/>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" x:Name="CurrentRateText" Foreground="#888888" Margin="0,0,0,12"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" x:Name="DownLabel" Text="" VerticalAlignment="Center" Margin="0,6"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="DownBox" Margin="12,6,0,6" Padding="4,3"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" x:Name="UpLabel" Text="" VerticalAlignment="Center" Margin="0,6"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="UpBox" Margin="12,6,0,6" Padding="4,3"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" x:Name="TcpLabel" Text="" VerticalAlignment="Center" Margin="0,6"/>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="TcpBox" Margin="12,6,0,6" Padding="4,3"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" x:Name="UdpLabel" Text="" VerticalAlignment="Center" Margin="0,6"/>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="UdpBox" Margin="12,6,0,6" Padding="4,3"/>
+
+        <TextBlock Grid.Row="6" Grid.ColumnSpan="2" x:Name="ZeroHint" Text="" Foreground="#888888" Margin="0,6,0,0"/>
+
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,14,0,0">
+            <Button x:Name="ClearButton" Content="" Padding="14,6" Margin="0,0,10,0" Click="Clear_Click"/>
+            <Button x:Name="CancelButton" Content="" Padding="14,6" Margin="0,0,10,0" IsCancel="True" Click="Cancel_Click"/>
+            <Button x:Name="ApplyButton" Content="" Padding="14,6" IsDefault="True" Click="Ok_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
